@@ -7,13 +7,14 @@ class Router {
         
         try {
 
-            // CHARGEMENT AUTOMATIQUE DES CLASSES
+            // AUTOMATIC LOADING OF CLASSES
             spl_autoload_register( function( $class ) {
                 require_once( 'Models/'.$class.'.php' );
             });
 
             $url = '';
 
+            // THE CONTROLLER IS INCLUDED ACCORDING TO THE USER'S ACTION
             if( isset( $_GET['url'] ) ) {
                 
                 $url = explode( '/', filter_var( $_GET['url'], FILTER_SANITIZE_URL ) );
@@ -33,11 +34,12 @@ class Router {
 
             } else {
 
-                require_once( "Controllers/AccueilController.php" );
+                require_once( 'Controllers/AccueilController.php' );
                 $this->_ctrl = new AccueilController( $url );
-
+                
             }
 
+        // ERROR MANAGEMENT
         } catch( Exception $e ) {
 
             $e->getMessage();
