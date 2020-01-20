@@ -1,8 +1,10 @@
 <?php
+require_once( 'Views/View.php' );
 
 class AccueilController {
 
     private $_articleManager;
+    private $_view;
 
     public function __construct( $url ) {
         
@@ -18,7 +20,8 @@ class AccueilController {
         $this->_articleManager = new ArticleManager();
         $articles = $this->_articleManager->getArticles();
 
-        require_once('Views/AccueilView.php');
+        $this->_view = new View( 'Accueil' );
+        $this->_view->generate( array( 'articles' => $articles ) );
     }
 
 }

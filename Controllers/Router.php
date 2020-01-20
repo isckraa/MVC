@@ -43,7 +43,7 @@ class Router {
         } catch( Exception $e ) {
 
             $e->getMessage();
-            require_once( "Views/404.html" );
+            require_once( "Views/ErrorView.php" );
 
         }
 
