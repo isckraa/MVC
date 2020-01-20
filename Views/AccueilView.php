@@ -1,4 +1,4 @@
-<?php foreach( $articles as $article ): ?>
+<?php $this->_title = "Accueil"; foreach( $articles as $article ): ?>
 
     <h2><?= $article->getTitle(); ?></h2>
     <time><?= $article->getDate(); ?></time>

@@ -1,3 +1,3 @@
 <?php
 
-echo "Error page view.";
+echo "Page introuvable.";

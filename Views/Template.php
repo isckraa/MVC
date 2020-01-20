@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="">Mon Blog</a></h1>
+        <h1><a href=" <?= URL ?>">Mon Blog</a></h1>
         <p>Bienvenue sur mon blog</p>
     </header>
 
